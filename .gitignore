@@ -60,6 +60,9 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+monster_hunter.db
+test_*.db
+test/
 
 # Flask stuff:
 instance/
@@ -214,3 +217,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+#Base de datos local
+monster_hunter.db
