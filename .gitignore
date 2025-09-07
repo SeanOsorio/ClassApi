@@ -220,3 +220,6 @@ __marimo__/
 
 #Base de datos local
 monster_hunter.db
+
+# Scripts de utilidades de base de datos
+clear_database.py

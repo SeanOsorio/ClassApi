@@ -7,6 +7,15 @@ def get_weapon_by_id(weapon_id):
     weapon = db.query(Weapon).filter(Weapon.id == weapon_id).first()
     return weapon
 
+# CRUD para armas
+def get_all_weapons():
+    db = next(get_db())
+    return db.query(Weapon).all()
+
+def get_weapons_by_category(category_id):
+    db = next(get_db())
+    return db.query(Weapon).filter(Weapon.category_id == category_id).all()
+
 # CRUD para categorías de armas
 def get_all_categories():
     db = next(get_db())
