@@ -54,7 +54,7 @@ DATABASE_URL = f"postgresql://{DBUSER}:{DBPASSWORD}@{DBHOST}:{DBPORT}/{DBNAME}"
 # Crear motor SQLAlchemy con configuraciones para producción
 engine = create_engine(
     DATABASE_URL, 
-    echo=True,  # Mostrar SQL queries en desarrollo (cambiar a False en producción)
+    echo=False,  # Ocultar SQL queries para producción limpia
     pool_pre_ping=True,  # Verificar conexiones antes de usarlas
     pool_recycle=3600,   # Reciclar conexiones cada hora
     max_overflow=20,     # Máximo de conexiones adicionales en pool

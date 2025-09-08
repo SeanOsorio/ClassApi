@@ -22,6 +22,7 @@ Licencia: MIT
 from flask import Flask, jsonify
 from controllers.weapons_controller import weapons_bp
 from config.database import init_db
+from __version__ import __version__, __title__, RELEASE_NAME
 
 # =============================================================================
 # INICIALIZACIÓN DE LA APLICACIÓN FLASK
@@ -55,14 +56,14 @@ app = create_app()
 # INICIALIZACIÓN DE BASE DE DATOS
 # =============================================================================
 
-print("🚀 Iniciando Monster Hunter Weapons API...")
-print("🔗 Conectando a base de datos PostgreSQL...")
+print(f"🚀 Iniciando {__title__} v{__version__}")
+print(f"📦 Release: {RELEASE_NAME}")
 
 # Inicializar base de datos al arrancar la aplicación
 # Esto crea las tablas si no existen (safe operation)
 init_db()
 
-print("📊 Base de datos inicializada correctamente")
+print("✅ Base de datos inicializada")
 
 # =============================================================================
 # REGISTRO DE BLUEPRINTS (RUTAS)
@@ -164,10 +165,11 @@ def internal_server_error(error):
 
 if __name__ == '__main__':
     print("=" * 50)
-    print("🎮 MONSTER HUNTER WEAPONS API")
+    print(f"🎮 MONSTER HUNTER WEAPONS API v{__version__}")
     print("=" * 50)
     print("🌐 Servidor iniciando en: http://127.0.0.1:5000")
     print("📚 Documentación: https://github.com/SeanOsorio/ClassApi")
+    print(f"📦 Release: {RELEASE_NAME}")
     print("🐛 Modo debug: ACTIVADO")
     print("=" * 50)
     
